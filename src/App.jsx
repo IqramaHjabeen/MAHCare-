@@ -25,169 +25,418 @@ const App = () => {
   const [isCheckout, setIsCheckout] = useState(false);
 
   // --- DATA ---
-  const products = [
-    {
-      id: 1,
-      name: 'Matte Lipstick - Ruby Red',
-      category: 'lips',
-      price: 24.99,
-      originalPrice: 29.99,
-      rating: 4.8,
-      image: 'https://i.pinimg.com/736x/8f/e8/5b/8fe85b522ebafc68d6ecbc775c57a252.jpg',
-      description: 'Long-lasting matte lipstick with rich pigmentation'
-    },
-    {
-      id: 2,
-      name: 'Glow Foundation',
-      category: 'face',
-      price: 34.99,
-      originalPrice: 39.99,
-      rating: 4.6,
-      image: 'https://i.pinimg.com/736x/90/88/24/9088244daba432aa69567d5d5c66f202.jpg',
-      description: 'Lightweight foundation with natural finish'
-    },
-    {
-      id: 3,
-      name: 'Eyeshadow Palette - Sunset',
-      category: 'eyes',
-      price: 49.99,
-      originalPrice: 59.99,
-      rating: 4.9,
-      image: 'https://i.pinimg.com/1200x/14/dd/5d/14dd5d9350fa4e1d8c10c199978a1527.jpg',
-      description: '18 vibrant shades for day and night looks'
-    },
-    {
-      id: 4,
-      name: 'Waterproof Mascara',
-      category: 'eyes',
-      price: 19.99,
-      originalPrice: 24.99,
-      rating: 4.5,
-      image: 'https://i.pinimg.com/1200x/57/69/cb/5769cb52b96f673a6647c577a4cc9f5d.jpg',
-      description: 'Lengthening and volumizing mascara'
-    },
-    {
-      id: 5,
-      name: 'Blush Duo - Peach',
-      category: 'face',
-      price: 27.99,
-      originalPrice: 32.99,
-      rating: 4.7,
-      image: 'https://i.pinimg.com/736x/19/e1/3b/19e13beec5db5a3c721a6a80efa903e5.jpg',
-      description: 'Dual-toned blush for natural flush'
-    },
-    {
-      id: 6,
-      name: 'Makeup Brush Set',
-      category: 'tools',
-      price: 59.99,
-      originalPrice: 79.99,
-      rating: 4.8,
-      image: 'https://i.pinimg.com/1200x/95/8c/67/958c673a376d954388e4451eb0740d8a.jpg',
-      description: 'Professional 12-piece brush set'
-    },
-    {
-      id: 7,
-      name: 'Lip Gloss - Clear Shine',
-      category: 'lips',
-      price: 16.99,
-      originalPrice: 19.99,
-      rating: 4.4,
-      image: 'https://i.pinimg.com/1200x/69/4b/d6/694bd63bc1a5ac97e29c2980841cc84f.jpg',
-      description: 'Non-sticky glossy finish'
-    },
-    {
-      id: 8,
-      name: 'Setting Powder',
-      category: 'face',
-      price: 29.99,
-      originalPrice: 34.99,
-      rating: 4.6,
-      image: 'https://i.pinimg.com/736x/35/34/5f/35345fca3ed3c2cc15df0c5314b62c2d.jpg',
-      description: 'Translucent powder for all-day wear'
-    }
-  ];
+  // src/data/data.js
 
-  const makeupServices = [
-    {
-      id: 101,
-      title: 'Bridal Package (3 days)',
-      description: 'Mehndi, Barat, Valima',
-      price: 250.00,
-      image: 'https://i.pinimg.com/736x/d3/8c/04/d38c045e549f120ab10254fee920d238.jpg',
-      duration: '3 Days'
-    },
-    {
-      id: 102,
-      title: 'Airbrush Makeup',
-      description: 'Flawless, long-lasting makeup for any event',
-      price: 350.00,
-      image: 'https://i.pinimg.com/736x/4d/b6/17/4db617862600832aeb07f59809951599.jpg',
-      duration: '1 Day'
-    },
-    {
-      id: 103,
-      title: 'Glam Makeup',
-      description: 'Bold and dramatic look for special occasions',
-      price: 250.00,
-      image: 'https://i.pinimg.com/736x/16/27/ff/1627ffef2b023995dc604e83a86b7d33.jpg',
-      duration: '1 Day'
-    }
-  ];
+const products = [
+  {
+    id: 1,
+    name: "Matte Lipstick - Ruby Red",
+    category: "lips",
+    price: 24.99,
+    originalPrice: 29.99,
+    rating: 4.8,
+    image:
+      "https://i.pinimg.com/736x/8f/e8/5b/8fe85b522ebafc68d6ecbc775c57a252.jpg",
+    description: "Long-lasting matte lipstick with rich pigmentation",
+  },
+  {
+    id: 2,
+    name: "Glow Foundation",
+    category: "face",
+    price: 34.99,
+    originalPrice: 39.99,
+    rating: 4.6,
+    image:
+      "https://i.pinimg.com/736x/90/88/24/9088244daba432aa69567d5d5c66f202.jpg",
+    description: "Lightweight foundation with natural finish",
+  },
+  {
+    id: 3,
+    name: "Eyeshadow Palette - Sunset",
+    category: "eyes",
+    price: 49.99,
+    originalPrice: 59.99,
+    rating: 4.9,
+    image:
+      "https://i.pinimg.com/1200x/14/dd/5d/14dd5d9350fa4e1d8c10c199978a1527.jpg",
+    description: "18 vibrant shades for day and night looks",
+  },
+  {
+    id: 4,
+    name: "Waterproof Mascara",
+    category: "eyes",
+    price: 19.99,
+    originalPrice: 24.99,
+    rating: 4.5,
+    image:
+      "https://i.pinimg.com/1200x/57/69/cb/5769cb52b96f673a6647c577a4cc9f5d.jpg",
+    description: "Lengthening and volumizing mascara",
+  },
+  {
+    id: 5,
+    name: "Blush Duo - Peach",
+    category: "face",
+    price: 27.99,
+    originalPrice: 32.99,
+    rating: 4.7,
+    image:
+      "https://i.pinimg.com/736x/19/e1/3b/19e13beec5db5a3c721a6a80efa903e5.jpg",
+    description: "Dual-toned blush for natural flush",
+  },
+  {
+    id: 6,
+    name: "Makeup Brush Set",
+    category: "tools",
+    price: 59.99,
+    originalPrice: 79.99,
+    rating: 4.8,
+    image:
+      "https://i.pinimg.com/1200x/95/8c/67/958c673a376d954388e4451eb0740d8a.jpg",
+    description: "Professional 12-piece brush set",
+  },
+  {
+    id: 7,
+    name: "Lip Gloss - Clear Shine",
+    category: "lips",
+    price: 16.99,
+    originalPrice: 19.99,
+    rating: 4.4,
+    image:
+      "https://i.pinimg.com/1200x/69/4b/d6/694bd63bc1a5ac97e29c2980841cc84f.jpg",
+    description: "Non-sticky glossy finish",
+  },
+  {
+    id: 8,
+    name: "Setting Powder",
+    category: "face",
+    price: 29.99,
+    originalPrice: 34.99,
+    rating: 4.6,
+    image:
+      "https://i.pinimg.com/736x/35/34/5f/35345fca3ed3c2cc15df0c5314b62c2d.jpg",
+    description: "Translucent powder for all-day wear",
+  },
+ 
+  {
+    id: 9,
+    name: "Liquid Lipstick - Coral",
+    category: "lips",
+    price: 22.99,
+    originalPrice: 28.99,
+    rating: 4.7,
+    image: "https://i.pinimg.com/736x/f3/49/98/f349980a553bbf55a4a56c5b530a7012.jpg",
+    description: "Long-lasting liquid lipstick with smooth finish",
+  },
+  {
+    id: 10,
+    name: "Lip Tint - Rose",
+    category: "lips",
+    price: 18.99,
+    originalPrice: 23.99,
+    rating: 4.5,
+    image: "https://i.pinimg.com/736x/90/dc/0c/90dc0c5a3ee1c561fd00c5bd49461881.jpg",
+    description: "Natural tint for soft and long-lasting color",
+  },
+  {
+    id: 11,
+    name: "Eyeliner Pencil - Black",
+    category: "eyes",
+    price: 14.99,
+    originalPrice: 19.99,
+    rating: 4.6,
+    image: "https://i.pinimg.com/736x/77/82/18/778218a92843ab9ee0761eda6134a96e.jpg",
+    description: "Smooth and precise black eyeliner for all-day wear",
+  },
+  // {
+  //   id: 12,
+  //   name: "Waterproof Mascara",
+  //   category: "eyes",
+  //   price: 19.99,
+  //   originalPrice: 24.99,
+  //   rating: 4.8,
+  //   image: "https://i.pinimg.com/736x/d4/df/a6/d4dfa60234e54a60d21e16a38a5dc90e.jpg",
+  //   description: "Lengthening and volumizing mascara for bold lashes",
+  // },
+  // {
+  //   id: 13,
+  //   name: "Glow Foundation",
+  //   category: "face",
+  //   price: 34.99,
+  //   originalPrice: 39.99,
+  //   rating: 4.6,
+  //   image: "https://i.pinimg.com/736x/90/88/24/glow-foundation.jpg",
+  //   description: "Lightweight foundation with natural finish",
+  // },
+  {
+    id: 14,
+    name: "Blush Duo - Peach",
+    category: "face",
+    price: 27.99,
+    originalPrice: 32.99,
+    rating: 4.7,
+    image: "https://i.pinimg.com/736x/df/c3/3d/dfc33dcc65698d7d822db6861eb4ade6.jpg",
+    description: "Dual-toned blush for a natural flush",
+  }
+];
 
-  const hairServices = [
-    {
-      id: 201,
-      title: 'Hairstyling',
-      description: 'Any look (Extra charge for flowers)',
-      price: 150.00,
-      image: 'https://i.pinimg.com/1200x/2c/d8/f4/2cd8f4f036d989a85cb739f033a3f2bd.jpg',
-      duration: '1 Style'
-    },
-    {
-      id: 202,
-      title: 'Hair Cutting',
-      description: 'Layer, Bob, Step cuts',
-      price: 300.00,
-      image: 'https://i.pinimg.com/736x/48/84/4f/48844ffb1169ab67c01e4baf8e8886d0.jpg',
-      duration: '1 Hour'
-    },
-    {
-      id: 203,
-      title: 'Hair Treatment',
-      description: 'Deep conditioning and repair treatments',
-      price: 120.00,
-      image: 'https://i.pinimg.com/736x/f1/f0/f8/f1f0f865a56728766d8ed6f9408da16a.jpg',
-      duration: '1 Hour'
-    }
-  ];
+ const makeupServices = [
+  {
+    id: 101,
+    title: "Bridal Package (3 days)",
+    description: "Mehndi, Barat, Valima",
+    price: 250.0,
+    image:
+      "https://i.pinimg.com/736x/d3/8c/04/d38c045e549f120ab10254fee920d238.jpg",
+    duration: "3 Days",
+  },
+  {
+    id: 102,
+    title: "Airbrush Makeup",
+    description: "Flawless, long-lasting makeup for any event",
+    price: 350.0,
+    image:
+      "https://i.pinimg.com/736x/4d/b6/17/4db617862600832aeb07f59809951599.jpg",
+    duration: "1 Day",
+  },
+  {
+    id: 103,
+    title: "Glam Makeup",
+    description: "Bold and dramatic look for special occasions",
+    price: 250.0,
+    image:
+      "https://i.pinimg.com/736x/16/27/ff/1627ffef2b023995dc604e83a86b7d33.jpg",
+    duration: "1 Day",
+  },
+  {
+    id: 104,
+    title: "Party Makeup",
+    description: "Glamorous look for parties",
+    price: 180.0,
+    image: "https://i.pinimg.com/736x/f1/ff/3f/f1ff3f0a130931f6a106b740f46800cb.jpg",
+    duration: "1 Day",
+  },
+  {
+    id: 105,
+    title: "Photoshoot Makeup",
+    description: "Perfect look for photoshoots",
+    price: 220.0,
+    image: "https://i.pinimg.com/736x/08/2d/cc/082dcccbd8a9dfdcf57865f639db27d4.jpg",
+    duration: "1 Day",
+  },
+  {
+    id: 106,
+    title: "Corporate Makeup",
+    description: "Professional makeup for events",
+    price: 150.0,
+    image: "https://i.pinimg.com/736x/f2/63/37/f26337907cce687a3fbfed7f13651975.jpg",
+    duration: "1 Day",
+  },
+  {
+    id: 107,
+    title: "Everyday Glam",
+    description: "Simple everyday makeup",
+    price: 100.0,
+    image: "https://i.pinimg.com/736x/33/a4/b1/33a4b12ab656ffa99ca0d73741dac4a8.jpg",
+    duration: "1 Day",
+  },
+  {
+    id: 108,
+    title: "Evening Glam",
+    description: "Elegant evening makeup",
+    price: 200.0,
+    image: "https://i.pinimg.com/736x/35/33/50/353350b592948b4a4f0c401854276a74.jpg",
+    duration: "1 Day",
+  },
+  {
+    id: 109,
+    title: 'Festival Glam',
+    description: 'Bright and bold look for festivals',
+    price: 180.00,
+    image: 'https://i.pinimg.com/736x/71/03/7a/71037a2c3bf19e1a4bd967ccef4e0e2c.jpg',
+    duration: '1 Day'
+  },
+  {
+    id: 110,
+    title: 'Minimal Makeup',
+    description: 'Natural look with light coverage',
+    price: 120.00,
+    image: 'https://i.pinimg.com/736x/72/ef/a2/72efa2a8825d6426223b918cbe2348fc.jpg',
+    duration: '1 Day'
+  }
+];
 
-  const skincareServices = [
-    {
-      id: 301,
-      title: 'Gold Facial',
-      description: 'Luxury facial with gold particles for radiant skin',
-      price: 180.00,
-      image: 'https://i.pinimg.com/1200x/8f/06/72/8f0672c6e2670f86146e485ea6d7a14f.jpg',
-      duration: '90 Minutes'
-    },
-    {
-      id: 302,
-      title: 'Hydra Facial',
-      description: 'Deep hydration and skin rejuvenation',
-      price: 150.00,
-      image: 'https://i.pinimg.com/736x/12/68/42/1268425984b2c8579e8157dbde3c89dd.jpg',
-      duration: '60 Minutes'
-    },
-    {
-      id: 303,
-      title: 'Acne Treatment',
-      description: 'Professional acne clearing and prevention',
-      price: 120.00,
-      image: 'https://i.pinimg.com/736x/34/04/e7/3404e78fb490d5aeb579fb4697afbee6.jpg',
-      duration: '60 Minutes'
-    }
-  ];
+ const hairServices = [
+  {
+    id: 201,
+    title: "Hairstyling",
+    description: "Any look (Extra charge for flowers)",
+    price: 150.0,
+    image:
+      "https://i.pinimg.com/1200x/2c/d8/f4/2cd8f4f036d989a85cb739f033a3f2bd.jpg",
+    duration: "1 Style",
+  },
+  {
+    id: 202,
+    title: "Hair Cutting",
+    description: "Layer, Bob, Step cuts",
+    price: 300.0,
+    image:
+      "https://i.pinimg.com/736x/48/84/4f/48844ffb1169ab67c01e4baf8e8886d0.jpg",
+    duration: "1 Hour",
+  },
+  {
+    id: 203,
+    title: "Hair Treatment",
+    description: "Deep conditioning and repair treatments",
+    price: 120.0,
+    image:
+      "https://i.pinimg.com/736x/f1/f0/f8/f1f0f865a56728766d8ed6f9408da16a.jpg",
+    duration: "1 Hour",
+  },
+  {
+    id: 204,
+    title: "Keratin Treatment",
+    description: "Smooth & frizz-free hair",
+    price: 400.0,
+    image: "https://i.pinimg.com/736x/4e/f4/a8/4ef4a87c4da99edefc6c7b97d173a5cc.jpg",
+    duration: "2 Hours",
+  },
+  {
+    id: 205,
+    title: "Hair Coloring",
+    description: "Vibrant color options",
+    price: 350.0,
+    image: "https://i.pinimg.com/736x/d6/bd/2c/d6bd2c0dab7d81cf0a7d80e3847c4f6b.jpg",
+    duration: "2 Hours",
+  },
+  {
+    id: 206,
+    title: "Hair Extensions",
+    description: "Clip-in extensions",
+    price: 200.0,
+    image: "https://i.pinimg.com/736x/4c/1b/dd/4c1bdd280fb9b068c1629e0d80193f8d.jpg",
+    duration: "2 Hours",
+  },
+  {
+    id: 207,
+    title: "Updo Styling",
+    description: "Elegant updos",
+    price: 250.0,
+    image: "https://i.pinimg.com/736x/65/04/d6/6504d68c92fbf27a5ad2ba1b88af1c8b.jpg",
+    duration: "1 Hour",
+  },
+  {
+    id: 208,
+    title: "Blow Dry",
+    description: "Quick styling",
+    price: 100.0,
+    image: "https://i.pinimg.com/736x/c2/29/46/c229464938e8bc7bdaeeb8d159097fb9.jpg",
+    duration: "30 Minutes",
+  },
+  {
+    id: 209,
+    title: 'Scalp Massage',
+    description: 'Relaxing scalp massage for healthy hair',
+    price: 80.00,
+    image: 'https://i.pinimg.com/736x/99/27/ff/9927ff0f5c18c4ad9d10c3b78cc77142.jpg',
+    duration: '30 Minutes'
+  },
+  {
+    id: 210,
+    title: 'Perm Styling',
+    description: 'Curly or wavy hair styling',
+    price: 250.00,
+    image: 'https://i.pinimg.com/736x/64/0b/4f/640b4f8fddbbe20c5a045c58b62376d5.jpg',
+    duration: '2 Hours'
+  }
+];
+
+ const skincareServices = [
+  {
+    id: 301,
+    title: "Gold Facial",
+    description: "Luxury facial with gold particles for radiant skin",
+    price: 180.0,
+    image:
+      "https://i.pinimg.com/1200x/8f/06/72/8f0672c6e2670f86146e485ea6d7a14f.jpg",
+    duration: "90 Minutes",
+  },
+  {
+    id: 302,
+    title: "Hydra Facial",
+    description: "Deep hydration and skin rejuvenation",
+    price: 150.0,
+    image:
+      "https://i.pinimg.com/736x/12/68/42/1268425984b2c8579e8157dbde3c89dd.jpg",
+    duration: "60 Minutes",
+  },
+  {
+    id: 303,
+    title: "Acne Treatment",
+    description: "Professional acne clearing and prevention",
+    price: 120.0,
+    image:
+      "https://i.pinimg.com/736x/34/04/e7/3404e78fb490d5aeb579fb4697afbee6.jpg",
+    duration: "60 Minutes",
+  },
+  {
+    id: 304,
+    title: "Anti-Aging Facial",
+    description: "Reduces wrinkles and fine lines",
+    price: 200.0,
+    image: "https://i.pinimg.com/1200x/d0/3a/66/d03a66efd46fe1c085e0327a4f029324.jpg",
+    duration: "60 Minutes",
+  },
+  {
+    id: 305,
+    title: "Vitamin C Facial",
+    description: "Brightens skin and reduces pigmentation",
+    price: 160.0,
+    image: "https://i.pinimg.com/736x/f4/e6/0d/f4e60d2eef4fd10245ed1290a6cf6802.jpg",
+    duration: "60 Minutes",
+  },
+  {
+    id: 306,
+    title: "Deep Cleansing Facial",
+    description: "Removes dirt and impurities",
+    price: 140.0,
+    image: "https://i.pinimg.com/736x/da/1e/3e/da1e3e2e39d08b2b71752dd07b71e6ee.jpg",
+    duration: "45 Minutes",
+  },
+  {
+    id: 307,
+    title: "Collagen Facial",
+    description: "Boosts skin elasticity",
+    price: 180.0,
+    image: "https://i.pinimg.com/736x/f6/18/6a/f6186ad6f41ee6d95d1b91f56dbbe2df.jpg",
+    duration: "60 Minutes",
+  },
+  {
+    id: 308,
+    title: "Hydrating Facial",
+    description: "Intense hydration for glowing skin",
+    price: 150.0,
+    image: "https://i.pinimg.com/736x/8c/d2/2d/8cd22d920b7e97782bb7588308cad370.jpg",
+    duration: "60 Minutes",
+  },
+  {
+    id: 309,
+    title: 'Brightening Facial',
+    description: 'Enhances skin radiance and glow',
+    price: 170.00,
+    image: 'https://i.pinimg.com/736x/40/dd/d7/40ddd7e25d4c36456fc36642bd2687cb.jpg',
+    duration: '60 Minutes'
+  },
+  {
+    id: 310,
+    title: 'Soothing Facial',
+    description: 'Calms sensitive skin and reduces redness',
+    price: 150.00,
+    image: 'https://i.pinimg.com/736x/3e/06/89/3e06893b2f97374611ce8fca49e1bd59.jpg',
+    duration: '60 Minutes'
+  }
+];
+
 
   // --- HELPER FUNCTIONS ---
   const formatCurrency = (amount) => {
@@ -693,7 +942,7 @@ const App = () => {
 
             <div className="cart-icon">
               <button onClick={() => setShowCart(true)} aria-label="View cart">
-                🛒 <span className="cart-count">{cartCount}</span>
+               💭 <span className="cart-count">{cartCount}</span>
               </button>
             </div>
           </div>
@@ -951,10 +1200,10 @@ const App = () => {
 
               <div className="invoice-actions">
                 <button className="print-invoice-btn" onClick={printInvoice}>
-                  📄 Print Invoice
+                   Print Invoice
                 </button>
                 <button className="close-invoice-btn" onClick={() => setShowInvoice(false)}>
-                  Continue Shopping
+                  Continue 
                 </button>
               </div>
             </div>

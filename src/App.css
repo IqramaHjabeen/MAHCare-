@@ -136,7 +136,7 @@ body {
   display: flex;
   align-items: center;
   background-color: #000;
-  border-radius: 4px;
+  border-radius: 50px;
   padding: 0.5rem 1rem;
   transition: all 0.3s;
   border: 1px solid #333;
@@ -271,7 +271,7 @@ body {
   padding: 1rem;
   border: none;
   background: none;
-  text-align: left;
+  text-align: left; /* Keeping left for readability inside dropdown */
   cursor: pointer;
   border-radius: 4px;
   margin-bottom: 0.2rem;
@@ -391,7 +391,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  text-align: center; /* Already centered */
   overflow: hidden;
 }
 
@@ -486,7 +486,7 @@ body {
 
 /* Section Header */
 .section-header {
-  text-align: left;
+  text-align: center; /* CHANGED: Centered section headers */
   max-width: 1400px;
   margin: 0 auto 2rem;
   padding: 0 3%;
@@ -502,6 +502,7 @@ body {
 .section-header p {
   font-size: 1rem;
   color: #b3b3b3;
+  text-align: center; /* Already centered */
 }
 
 /* Services Section (Trending Style) */
@@ -563,6 +564,7 @@ body {
 
 .service-info {
   padding: 1rem;
+  text-align: center; /* CHANGED: Centered service text */
 }
 
 .service-info h3 {
@@ -581,6 +583,7 @@ body {
 .service-price {
   display: flex;
   align-items: center;
+  justify-content: center; /* CHANGED: Centered price */
   margin-bottom: 1rem;
 }
 
@@ -693,7 +696,7 @@ body {
 
 .specialty-info {
   padding: 1rem;
-  /* Initially hidden or minimal, expanded on hover if desired, keeping simple for now */
+  text-align: center; /* CHANGED: Centered specialty text */
 }
 
 .specialty-info h3 {
@@ -719,6 +722,7 @@ body {
 .specialty-price {
   display: flex;
   align-items: center;
+  justify-content: center; /* CHANGED: Centered price */
   margin-bottom: 1rem;
 }
 
@@ -776,6 +780,7 @@ body {
   transition: all 0.3s;
   cursor: pointer;
   border: 2px solid transparent;
+  text-align: center; /* CHANGED: Centered category item text */
 }
 
 .category-item:hover {
@@ -810,6 +815,7 @@ body {
   max-width: 1400px;
   margin: 0 auto 2rem;
   padding: 0 3%;
+  text-align: center; /* CHANGED: Centered filter buttons container */
 }
 
 .search-results-info {
@@ -849,7 +855,7 @@ body {
 }
 
 .categories {
-  text-align: left;
+  text-align: center; /* CHANGED: Centered categories header */
   margin-bottom: 1.5rem;
 }
 
@@ -857,6 +863,7 @@ body {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center; /* CHANGED: Centered filter buttons */
 }
 
 .category-btn {
@@ -973,6 +980,7 @@ body {
 .product-info {
   padding: 1rem;
   background: #181818;
+  text-align: center; /* CHANGED: Centered product text */
 }
 
 .product-category {
@@ -1007,6 +1015,8 @@ body {
   color: #ffd700;
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
+  justify-content: center; /* CHANGED: Centered rating */
+  display: flex;
 }
 
 .rating-number {
@@ -1019,6 +1029,7 @@ body {
   align-items: center;
   gap: 1rem;
   margin-bottom: 1rem;
+  justify-content: center; /* CHANGED: Centered price */
 }
 
 .current-price {
@@ -1136,6 +1147,7 @@ body {
   right: 40px;
   padding: 1.5rem;
   border-radius: 8px;
+   /* CHANGED: Centered contact info */
 }
 
 /* Info Text */
@@ -1180,12 +1192,16 @@ body {
   color: #fff;
   font-size: 1.5rem;
   font-weight: 700;
+  text-align: center; /* CHANGED: Centered form heading */
+  margin-bottom: 1rem;
 }
 
 .sub-text {
   color: #b3b3b3;
   font-size: 0.9rem;
   line-height: 1.6;
+  text-align: center; /* CHANGED: Centered form subtext */
+  margin-bottom: 1.5rem;
 }
 
 .form-label {
@@ -1193,6 +1209,7 @@ body {
   margin-bottom: 0.5rem;
   color: #b3b3b3;
   font-size: 0.9rem;
+  text-align: left; /* Labels usually kept left for readability, or can be centered */
 }
 
 .form-input {
@@ -1205,6 +1222,7 @@ body {
   outline: none;
   transition: all 0.3s;
   font-family: inherit;
+  text-align: left; /* Inputs usually kept left */
 }
 
 .form-input:focus {
@@ -1257,6 +1275,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
+  text-align: center; /* CHANGED: Centered footer content */
 }
 
 .footer-section h3,
@@ -1278,9 +1297,8 @@ body {
   border: none;
   color: #b3b3b3;
   text-decoration: none;
-  margin-bottom: 0.8rem;
+  margin: 0 auto 0.8rem auto; /* CHANGED: Centered footer links */
   transition: color 0.3s;
-  text-align: left;
   cursor: pointer;
   font-family: inherit;
   font-size: 0.9rem;
@@ -1316,6 +1334,7 @@ body {
   display: flex;
   gap: 1rem;
   margin-bottom: 1.5rem;
+  justify-content: center; /* CHANGED: Centered social icons */
 }
 
 .social-icon {
@@ -1430,7 +1449,7 @@ body {
 .close-invoice-btn {
   background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   cursor: pointer;
   color: #b3b3b3;
   width: 30px;
@@ -2194,7 +2213,6 @@ body {
   
   .footer-content {
     grid-template-columns: 1fr;
-    text-align: center;
   }
   
   .footer-section button {
